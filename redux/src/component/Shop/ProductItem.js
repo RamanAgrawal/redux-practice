@@ -3,11 +3,11 @@ import classes from './ProductItem.module.css';
 import { useDispatch } from 'react-redux';
 import { cartActions } from '../../store/CartSlice';
 const ProductItem = (props) => {
-  const { title, price, description } = props;
+  const { title, price, description ,id} = props;
   const {add}=cartActions
   const dispatch=useDispatch()
 const addtoCartHandler=()=>{
-dispatch(add({ title, price, description ,quantity:1}))
+dispatch(add({ title, price, description ,quantity:1,id}))
 }
   return (
     <li className={classes.item}>

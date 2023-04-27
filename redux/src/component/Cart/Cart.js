@@ -13,7 +13,7 @@ const dispatch=useDispatch()
       <ul>
         {cartitems.map(item=>(
 
-        <CartItem
+        <CartItem key={item.id}
           item={item}
         />
         ))}
