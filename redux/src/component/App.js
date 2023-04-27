@@ -1,18 +1,17 @@
 
-import { Fragment } from 'react';
 import './App.css';
-
-import Counter from './Counter';
-import Header from './Header';
-import Auth from './Auth';
+import Layout from './Layout/Layout'
+import Cart from './Cart/Cart'
+import Products from './Shop/Products'
+import { useSelector } from 'react-redux';
 function App() {
-
+const showCart=useSelector(state=>state.cart.showCart)
   return (
-    <Fragment>
-      <Header />
-      <Auth />
-      <Counter />
-    </Fragment>
+    
+    <Layout>
+      {showCart&&<Cart />}
+      <Products />
+    </Layout>
   );
 }
 
